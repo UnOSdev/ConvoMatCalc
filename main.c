@@ -24,33 +24,34 @@
 
 
 // 'Valgrind' was used to check for any memory leaks.
-// All heap blocks were freed -- no leaks are possible
+// All heap blocks were freed -- no leaks are possible.
 
 #include "matrix.h"
 
 int main(){
-	Matrix viewMat, filterMat, resultMat;
-	initMatrix(&viewMat, 4, 4);
-	initMatrix(&filterMat, 3, 3);
-	initMatrix(&resultMat, viewMat.I - filterMat.I + 1, viewMat.J - filterMat.J + 1);
-	Number vmd[] = {
+	Matrix viewMat, filterMat, resultMat;//Define matrices.
+	initMatrix(&viewMat, 4, 4);//Initialize a 4x4 matrix
+	initMatrix(&filterMat, 3, 3);//Initialize a 3x3 matrix
+	initMatrix(&resultMat, viewMat.I - filterMat.I + 1, viewMat.J - filterMat.J + 1);//Initialize 2x2 matrix
+	Number vmd[] = {//View Matrix Data
 		0, 1, 2, 0,
 		3, 4, 5, 2,
 		6, 7, 1, 1,
 		1, 2, 3, 4
 	};
-	Number fmd[] = {
+	Number fmd[] = {//Filter Matrix Data
 		0, 1, 0,
 		2, 3, 1,
 		0, 1, 2
 	};
 
-	setDataMatrix(&viewMat, vmd);
+	setDataMatrix(&viewMat, vmd);//Set matrix's data from from a raw array.
 	setDataMatrix(&filterMat, fmd);
 
-	convolutionMatrix(&resultMat, viewMat, filterMat);
-	printMatrix(resultMat);
+	convolutionMatrix(&resultMat, viewMat, filterMat);//Do the convolution calculation.
+	printMatrix(resultMat);//Print the result matrix to the standart output.
 
+	//Free all matrices
 	freeMatrix(&viewMat);
 	freeMatrix(&filterMat);
 	freeMatrix(&resultMat);

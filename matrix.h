@@ -46,7 +46,7 @@ typedef struct{
 
 //Initialize matrix by setting its size and allocating required memory.
 void initMatrix(Matrix* mat, const Index sizeI, const Index sizeJ);
-//Free-ing all allocated memory for the matrix.
+//Free-ing all allocated memory of the matrix.
 void freeMatrix(Matrix* mat);
 //Set raw data to the matrix data variable.
 void setDataMatrix(Matrix* mat, Number* data);
