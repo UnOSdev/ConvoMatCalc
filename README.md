@@ -1,5 +1,5 @@
 # ConvoMatCalc
-This is a small implementation of the convolution proccess.
+This is a small implementation of the convolution process.
 
 Built in Ubuntu Linux using *make* as a build system, and *gcc* as a compiler.
 C2x (C23) C standart was used but should be fine down to C99.
